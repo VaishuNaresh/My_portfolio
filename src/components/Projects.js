@@ -40,7 +40,7 @@ export default function Projects() {
                         <div className='p-5'>
                             <h3 className='font-bold text-gray-800 mb-1'>{project.title}</h3>
                             <p className='text-gray-500 text-sm mb-4'>{project.description}</p>
-                            <a className='btn text-xs inline-block' target='_blank' href={project.link}>View Project</a>
+                            <a className='btn text-xs inline-block' target='_blank' rel="noopener noreferrer" href={project.link}>View Project</a>
                         </div>
                     </div>
                 ))}
