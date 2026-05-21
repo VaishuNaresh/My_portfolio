@@ -1,54 +1,49 @@
-import websiteImg1 from '../assets/ecommerce-websites.jpg';
-import websiteImg2 from '../assets/food-ecommerce.jpg';
-import websiteImg3 from '../assets/website-blog.jpg';
+// import web1 from '../assets/ecommerce-websites.jpg';
+import web1 from '../assets/Task Manage.png'
+import web2 from '../assets/food-ecommerce.jpg';
+import web3 from '../assets/ecommerce-websites.jpg';
 
 export default function Projects() {
 
-    const config = {
-        projects : [
-            {
-                image: websiteImg1,
-                description: 'A ToDo App, Built with MERN Stack.',
-                link: 'https://github.com/jvlcode/jvlcart'
-            },
-            {
-                image: websiteImg2,
-                description: 'Calculator App ',
-                link: 'https://github.com/jvlcode/food'
-            },
-            {
-                image: websiteImg3,
-                description: 'Basic Blog Website . Built with Next JS and MongoDB',
-                link: 'https://github.com/jvlcode/blog'
-            }
-        ]
-    }
+    const projects = [
+        {
+            image: web1,
+            title: 'TaskSphere',
+            description: 'Built with MERN Stack',
+            link: 'https://github.com/VaishuNaresh/TaskSphere'
+        },
+        {
+            image: web2,
+            title: 'Expense Tracker',
+            description: 'MERN',
+            // link: 'https://github.com/jvlcode/food'
+        },
+        {
+            image: web3,
+            title: 'Ecommerce Website',
+            description: 'MERN',
+            // link: 'https://github.com/jvlcode/blog'
+        }
+    ]
 
-    //google it --- favicon generator
-
-    return <section id='projects' className="flex  flex-col py-20 px-5 justify-center bg-primary text-white">
-        <div className="w-full">
-            <div className="flex flex-col px-10 py-5">
-                {/* <h1 className="text-4xl border-b-4 border-secondary mb-5 w-[150px] font-bold"> */}
-                      <h1 className="text-4xl border-b-4 border-secondary mb-5 w-[150px] font-bold">Projects</h1>
-                <p>These are some of my best projects. I have built these with React, MERN and Bootstrap. Check them out.</p>
+    return <section id='projects' className='px-8 py-20 bg-white'>
+        <div className='max-w-6xl mx-auto'>
+            <div className='text-center mb-12 animate-fade-in-up'>
+                <h2 className='text-3xl font-bold text-gray-800 mb-2'>Projects</h2>
+                <div className='w-12 h-1 bg-[#fe7b9a] rounded mx-auto mb-4'></div>
+                <p className='text-gray-500 max-w-xl mx-auto'>Some of my best work built with React, MERN and Bootstrap</p>
             </div>
-        </div>
-        <div className="w-full">
-            <div className='flex flex-col md:flex-row px-10 gap-5'>
-                {config.projects.map((project) => (
-                     <div className='relative'>
-                        <img className='h-[200px] w-[500px]' src={project.image}/>
-                        <div className='project-desc'>
-                            <p className='text-center px-5 py-5'>{project.description}</p>
-                            <div className='flex justify-center'>
-                                <a className='btn' target='_blank' href={project.link}>View Project</a>
-                            </div>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                {projects.map((project, index) => (
+                    <div className={`card-white animate-fade-in-up delay-${index + 1}`}>
+                        <img className='w-full h-48 object-cover' src={project.image} alt={project.title}/>
+                        <div className='p-5'>
+                            <h3 className='font-bold text-gray-800 mb-1'>{project.title}</h3>
+                            <p className='text-gray-500 text-sm mb-4'>{project.description}</p>
+                            <a className='btn text-xs inline-block' target='_blank' href={project.link}>View Project</a>
                         </div>
                     </div>
                 ))}
-               
-               
             </div>
         </div>
     </section>

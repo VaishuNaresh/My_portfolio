@@ -1,3 +1,3 @@
 export default function Footer(){
-    return <div className="py-4 bg-secondary text-center text-white">&copy; Vaishali 2023</div>
+    return <div className="peach-footer py-6 text-center text-white/80 text-sm">&copy; Vaishali </div>
 }
